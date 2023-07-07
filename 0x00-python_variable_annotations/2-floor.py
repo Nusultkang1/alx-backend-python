@@ -1,4 +1,6 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
+"""a type-annotated function floor which takes a float n as argument and returns the floor of the float."""
 
 def floor(n: float) -> float:
+    """defines the function floor to return the floor value of a float"""
     return math.float(n)
