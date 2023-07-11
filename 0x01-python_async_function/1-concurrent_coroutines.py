@@ -1,9 +1,10 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """asynchronous function that takes two arguments and returns a random delay"""
 
 import asyncio
 import random
-from 0-basic_async_syntax.py import wait_random
+
+wait_random = __import__('0-basic_async_syntax').wait_random
 
 async def wait_n(n, max_delay):
     """returns wait_random n number of times"""
@@ -12,3 +13,6 @@ async def wait_n(n, max_delay):
 
     for _ in range(n):
         task = asyncio.create_task(wait_random(max_delay))
+    results = await asyncio.gather(*tasks)
+    return sorted(results)
+
